@@ -1,0 +1,63 @@
+
+    <head>
+        <Title>Iniciar sesión</Title>
+    </head>
+    
+    
+<body>
+    
+    <% if(locals.isLogged){ %>
+        <script>  document.location.href = '/profile' </script>
+        <% } else { %>
+
+    <main>
+        <div >
+                <div class="register"><h1>Inicia sesión</h1> </div>
+                <h4 class="texto1">Clientes registrados</h4>
+                <h4 class="texto1">Si ya tienes una cuenta con nosotros, por favor inicia sesión.</h4>
+                <p>*Campos requeridos</p><br><br>
+
+                <form action="/login" method="POST">
+                    <label for="email">*Correo electrónico:
+                        <input 
+                            type="text" 
+                            name="email" 
+                            id="email" 
+                            class="control"
+                            value= "<%= locals.oldData ? oldData.email : null %>"
+                        >  
+                    </label>
+                    <% if (locals.errors && errors.email) {%>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>
+                        </div>
+                    <%} %><br><br>
+                    <label for="password">*Contraseña:
+                        <input 
+                            type="password" 
+                            name="password" 
+                            id="password"
+                            class="control"
+                        >
+                    </label>
+                    <% if (locals.errors && errors.password) {%>
+                        <div class="text-danger">
+                            <%= errors.password.msg %>
+                        </div>
+                    <%} %><br><br>
+                    <label for="term1">
+                        <input type="checkbox" name="term1" id="term1">
+                        Recordarme contraseña
+                    </label>
+
+                    <div class="enviar">
+                        <button type="submit">Iniciar sesión</button><br><br>
+                        <a href="https://www.google.com" id="ligaContraseña">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </form>
+        </div>
+    </main>
+
+    <% } %>
+    
+</body>
