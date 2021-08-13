@@ -17,6 +17,7 @@ router.get('/', function(req, res, next) {
 //página formulario de registro
 router.get('/register', mainController.register);
 
+
 //procesamiento de registro
 router.post('/register', uploadFile.single('avatar'), validationsRegister, userLoggedMiddleware, mainController.processRegister);
 

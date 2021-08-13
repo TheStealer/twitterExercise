@@ -6,3 +6,66 @@ body {
 a {
   color: #00B7FF;
 }
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.barralateral {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.barralateral a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.barralateral a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; 
+}
+
+@media screen and (max-height: 450px) {
+  .barralateral {padding-top: 15px;}
+  .barralateral a {font-size: 18px;}
+}
+
+.boton {
+  background-color: #1dcaff;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 15px;
+  font-weight: bold;
+  margin-left: 25px;
+}
+
+.boton:hover {opacity: 1}
+
+.perfil{
+  margin-left: 25px;
+  color: white;
+}
